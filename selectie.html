@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select option</title>
+</head>
+
+<body>
+    <h2>Select option</h2>
+    <label>Options</label>
+    <select id="options">
+    <option value="buy">buy</option>
+    <option value="sell">sell</option>
+    </select>
+    <p id="demo"></p>
+
+    <script>
+        function selectOption(choice) {
+            let msg;
+            if (choice === "buy") {
+                msg = "Congrats! You bought it!"
+            } else {
+                msg = "Congrats! You sold it!"
+            }
+            return msg;
+
+        }
+        document.getElementById("options").addEventListener("change", function () {
+            let selectedOption = document.getElementById("options").value;
+            let message = selectOption(selectedOption);
+            document.getElementById("demo").innerHTML = message;
+
+        });
+    </script>
+</body>
+
+</html>
